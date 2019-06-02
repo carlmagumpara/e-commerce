@@ -13,7 +13,7 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('products');
+        // Schema::dropIfExists('products');
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('product_id');
             $table->string('photo')->nullable();
