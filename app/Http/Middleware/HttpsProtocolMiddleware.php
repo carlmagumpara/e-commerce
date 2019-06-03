@@ -15,7 +15,7 @@ class HttpsProtocolMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (!$request->secure() && $this->app->environment() == 'production') {
+        if (!$request->secure() && App::environment() === 'production') {
             return redirect()->secure($request->getRequestUri());
         }
 
