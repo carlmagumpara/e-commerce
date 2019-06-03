@@ -99,6 +99,7 @@ class ProductController extends Controller
     }
 
     // http://localhost:8000/api/products?page=1&orderColumn=created_at&orderBy=desc&perPage=3
+    // https://e-commerce-zan3.herokuapp.com/api/products?page=1&orderColumn=created_at&orderBy=desc&perPage=10
 
     public function products(Request $request)
     {
@@ -115,7 +116,8 @@ class ProductController extends Controller
     }
 
     // http://localhost:8000/api/products/1
-
+    // https://e-commerce-zan3.herokuapp.com/api/products/1
+    
     public function product($id)
     {
         return Product::where('product_id', $id)->first();
