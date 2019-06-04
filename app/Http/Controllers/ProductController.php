@@ -103,7 +103,12 @@ class ProductController extends Controller
 
     public function products(Request $request)
     {
-        $products = Product::orderBy($request->orderColumn, $request->orderBy)->get();
+        if ($request->has('brand')) {
+          $products = Product::orderBy($request->orderColumn, $request->orderBy)->get();
+        } else {
+          $products = Product::where('brand', $request->brand)orderBy($request->orderColumn, $request->orderBy)->get();
+        }
+        
         $data = [];
         foreach ($products as $value) {
             $data[] = $value;
