@@ -106,7 +106,7 @@ class ProductController extends Controller
         if ($request->has('brand')) {
           $products = Product::orderBy($request->orderColumn, $request->orderBy)->get();
         } else {
-          $products = Product::where('brand', $request->brand)orderBy($request->orderColumn, $request->orderBy)->get();
+          $products = Product::where('brand', $request->brand)->orderBy($request->orderColumn, $request->orderBy)->get();
         }
         
         $data = [];
